@@ -12,7 +12,7 @@ module.exports = app => {
     // Protected routes example
     router.get('/protected-route', verifyToken, (req, res) => {
       res.send({
-        message: 'Todo bene'
+        message: GetNumPlayerIndices()
       });
     });
 

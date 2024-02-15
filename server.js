@@ -35,6 +35,9 @@ db.sequelize.sync()
 // simple route
 // app.get("/", (req, res) => {
 //   res.json({ message: "Welcome to bezkoder application." });
+
+
+
 // });
 
 // Ruta principal
@@ -47,7 +50,7 @@ app.get('/', (req, res) => {
 app.use(express.static(path.join(GetResourcePath(GetCurrentResourceName()),'frontend', 'dist', 'dashpanel-app', 'browser')));
 
 require("./app/routes/auth.routes")(app);
-
+require("./app/routes/players.routes")(app);
 require("./app/routes/turorial.routes")(app);
 
 
@@ -58,4 +61,8 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
+
+// setInterval(() => {
+//   console.log("This is a console log that will be shown every 3 second.");
+// }, 3000);
 
