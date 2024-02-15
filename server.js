@@ -2,6 +2,9 @@ const express = require("express");
 const cors = require("cors");
 const path = require('path');
 
+const ESX = exports.es_extended.getSharedObject();
+const core= "esx"
+
 
 const app = express();
 
