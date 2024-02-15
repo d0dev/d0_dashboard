@@ -46,8 +46,9 @@ app.get('/', (req, res) => {
 // Servir archivos estáticos
 app.use(express.static(path.join(GetResourcePath(GetCurrentResourceName()),'frontend', 'dist', 'dashpanel-app', 'browser')));
 
-require("./app/routes/turorial.routes")(app);
 require("./app/routes/auth.routes")(app);
+
+require("./app/routes/turorial.routes")(app);
 
 
 // set port, listen for requests

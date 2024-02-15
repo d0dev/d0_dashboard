@@ -1,5 +1,6 @@
 module.exports = app => {
   const authController = require('../controllers/auth.controller.js');
+  const verifyToken = require('../utils/verifyToken.js');
 
 
   var router = require("express").Router();
@@ -8,5 +9,12 @@ module.exports = app => {
   router.post('/register', authController.register);
   router.post('/login', authController.login);
 
-  app.use('/api', router);
+    // Protected routes example
+    router.get('/protected-route', verifyToken, (req, res) => {
+      res.send({
+        message: 'Todo bene'
+      });
+    });
+
+  app.use('/api/auth', router);
 };
