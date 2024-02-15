@@ -3,12 +3,21 @@ const getWeaponName = require('../utils/getWeaponName.js');
 
 
 module.exports = app => {
+
+    router.get('/numPlayers', (req, res) => {
+        res.send({
+            nOfPlayers: GetNumPlayerIndices(),
+        });
+    });
+
     router.get('/players', (req, res) => {
         res.send({
             nOfPlayers: GetNumPlayerIndices(),
             players: getPlayers()
         });
     });
+
+
     
     function getPlayers(){
         const players = [];
