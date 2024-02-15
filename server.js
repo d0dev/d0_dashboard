@@ -35,17 +35,9 @@ db.sequelize.sync()
 //   console.log("Drop and re-sync db.");
 // });
 
-// simple route
-// app.get("/", (req, res) => {
-//   res.json({ message: "Welcome to bezkoder application." });
-
-
-
-// });
 
 // Ruta principal
 app.get('/', (req, res) => {
-  //console.log(path.join(GetResourcePath(GetCurrentResourceName()),'public', 'index.html'))
   res.sendFile(path.join(GetResourcePath(GetCurrentResourceName()),'frontend', 'dist', 'dashpanel-app', 'browser', 'index.html'));
 });
 
@@ -64,7 +56,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
-
+//Ejemplo de hilo independiente
 // setInterval(() => {
 //   console.log("This is a console log that will be shown every 3 second.");
 // }, 3000);

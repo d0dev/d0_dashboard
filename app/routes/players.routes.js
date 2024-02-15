@@ -20,14 +20,12 @@ module.exports = app => {
                 identifiers.push(GetPlayerIdentifier(player,i))
             }
         let playerName = '', xPlayer = '';
-            //console.log("test",GetPlayerIdentifier(player,0))
             if (player) {
                 if (core == "esx")  {
                     xPlayer = ESX.GetPlayerFromId(player)
-                    playerName = xPlayer.getName()    
-                     //console.log(xPlayer, name)                  
-                   
-                };     
+                    playerName = xPlayer.getName()                       
+                };
+                     
                 players.push({
                     id: player,
                     identifiers: identifiers,    
