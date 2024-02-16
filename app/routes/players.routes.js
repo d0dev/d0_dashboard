@@ -41,7 +41,6 @@ module.exports = app => {
                 };
                 if (QBCore) {
                     const playerData = QBCore.Functions.GetPlayer(player);
-                    //playerName = charinfo.firstname + ' ' + charinfo.lastname;
                     userFrameworkIdentifier = playerData.PlayerData.citizenid;
                     
                     playerName = playerData.PlayerData.charinfo.firstname + ' ' + playerData.PlayerData.charinfo.lastname;
