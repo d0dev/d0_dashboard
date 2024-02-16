@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const db = require('../models');
-const User = db.Auth;
+const models = require('../models');
+const User = models.Auth;
 
 exports.register = (req, res) => {
   // Validar solicitud
