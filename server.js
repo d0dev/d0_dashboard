@@ -2,8 +2,17 @@ const express = require("express");
 const cors = require("cors");
 const path = require('path');
 
-const ESX = exports.es_extended.getSharedObject();
-const core= "esx"
+//var ESX = exports.es_extended.getSharedObject();
+var ESX = null;
+var QBCore = null;
+//const core= "esx"
+
+if (GetResourceState("qb-core") == "started") {
+  QBCore = exports["qb-core"].GetCoreObject();
+}
+if (GetResourceState("es_extended") == "started") {
+  ESX = exports.es_extended.getSharedObject();
+}
 
 
 const app = express();
