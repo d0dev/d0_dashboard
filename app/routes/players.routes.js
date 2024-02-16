@@ -29,7 +29,7 @@ module.exports = app => {
             for (let i = 0; i < GetNumPlayerIdentifiers(player); i++) {
                 identifiers.push(GetPlayerIdentifier(player, i))
             }
-            let playerName= '',job = '', loadout = '', inventory = '', money = '';
+            let playerName= '',job = '', loadout = '', inventory = '', money = '', frameworkIdentifier = '';
             if (player) {
                 if (ESX) {
                     xPlayer = ESX.GetPlayerFromId(player)
@@ -42,10 +42,12 @@ module.exports = app => {
                 if (QBCore) {
                     const playerData = QBCore.Functions.GetPlayer(player);
                     //playerName = charinfo.firstname + ' ' + charinfo.lastname;
+                    userFrameworkIdentifier = playerData.PlayerData.citizenid;
+                    
                     playerName = playerData.PlayerData.charinfo.firstname + ' ' + playerData.PlayerData.charinfo.lastname;
                     job = playerData.PlayerData.job;
                     money = playerData.PlayerData.money;
-                    
+
                     const items = playerData.PlayerData.items;
                     inventory = items.filter(item => item.type !== 'weapon');
                     loadout = items.filter(item => item.type == 'weapon');
@@ -64,6 +66,7 @@ module.exports = app => {
                 loadout: loadout,
                 inventory: inventory,
                 money: money,
+                userFrameworkIdentifier: userFrameworkIdentifier
             });
         }        
         return players;
