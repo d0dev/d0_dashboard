@@ -1,20 +1,15 @@
 <div class="bg-dark">
     <mat-sidenav-container class="full-height" autosize="true">
         <mat-sidenav mode="side" opened class="bg-dark p-2 text-white">
-<!-- 
-            <div [hidden]="isExpanded" mat-menu-item (click)="toggleSidenav()" class="with-icon padded">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                </svg>Menu
-            </div> -->
-            <div [hidden]="isExpanded" mat-menu-item (click)="toggleSidenav()" class="with-icon padded">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                </svg>
+            <div mat-menu-item (click)="toggleSidenav()" class="with-icon padded">
+                <mat-icon *ngIf="isExpanded; else collapsedIcon" >close</mat-icon>
+                <ng-template #collapsedIcon>
+                    <mat-icon >menu</mat-icon>
+                </ng-template>
             </div>
 
             <div mat-menu-item *ngFor="let sideMenu of sideMenuList; let index" [routerLink]="['/', sideMenu.route]"
-                class="ms-1 with-icon padded">
+                class="with-icon padded">
                 <mat-icon >{{ sideMenu.icon }}</mat-icon>
                 <span [hidden]="!isExpanded">&nbsp;{{ sideMenu.name }}</span>
             </div>
