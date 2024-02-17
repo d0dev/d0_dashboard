@@ -6,5 +6,5 @@ export const routes: Routes = [
     // { path: 'home', component: HomeComponent },
      { path: 'test', component: TestComponent },
     { path: 'data-display', component: DataDisplayComponent },
-    { path: '', redirectTo: '/test', pathMatch: 'full' }
+    { path: '', redirectTo: '/', pathMatch: 'full' }
 ];

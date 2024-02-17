@@ -1,5 +1,10 @@
 
-<app-side-menu/>
 <!-- <app-data-display/>
 
 <router-outlet /> -->
+@if (isLoggedIn) {
+    <app-side-menu />
+
+} @else {
+    <app-login />
+}
