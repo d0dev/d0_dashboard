@@ -20,7 +20,7 @@ export class SideMenuComponent {
   sideMenuList = [
     { name: 'Home', icon: 'home', route: 'home' },
     { name: 'About', icon: 'info', route: 'test' },
-    { name: 'Contact', icon: 'mail', route: 'data-display' }
+    { name: 'Monitoring', icon: 'bar_chart', route: 'data-display' }
   ];
 
   toggleSidenav() {
