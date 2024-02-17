@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DataDisplayComponent } from './data-display/data-display.component';
+import { DataDisplayComponent } from './components/data-display/data-display.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { LoginComponent } from './components/login/login.component';
 

@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { DataDisplayComponent } from './data-display/data-display.component';
+import { DataDisplayComponent } from './components/data-display/data-display.component';
 import { TestComponent } from './components/test/test.component';
 
 export const routes: Routes = [
