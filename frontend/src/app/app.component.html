@@ -1,10 +1,15 @@
 
-<!-- <app-data-display/>
+<!-- <app-data-display/> -->
 
-<router-outlet /> -->
+
 @if (isLoggedIn) {
     <app-side-menu />
-
+    <div class="app-comp-container">
+        <router-outlet />
+    </div>
 } @else {
     <app-login />
 }
+
+
+
