@@ -6,7 +6,6 @@ var players= []
 
 
 exports.getPlayers = (req, res) => {
-  console.log('hola', players[0].weaponName)
   res.send({
     nOfPlayers: GetNumPlayerIndices(),
     core: ESX ? "ESX" : QBCore ? "QB" : null,
@@ -55,12 +54,14 @@ function getPlayers(){
               const items = playerData.PlayerData.items;
               inventory = items.filter(item => item.type !== 'weapon');
               loadout = items.filter(item => item.type == 'weapon');
+
             }
           }
       }
       players.push({
           id: player,
-          identifiers: identifiers,    
+          identifiers: identifiers,   
+          ping: GetPlayerPing(player),
           coords: GetEntityCoords(ped),
           health: GetEntityHealth(ped),
           armor: GetPedArmour(ped),
