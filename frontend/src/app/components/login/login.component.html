@@ -1,28 +1,43 @@
-<mat-card>
-    <mat-card-title>Login</mat-card-title>
-<mat-card-content>
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<div class="header">
+  <h1>Login</h1>
+</div>
 
-  <p>
+<h1 class="main main-header">Welcome to Los Santos</h1>
+
+<div class="main"
+  [formGroup]="profileForm" 
+>
+  <form class="main-form"
+    
+    (ngSubmit)="onSubmit()"
+  >
     <mat-form-field>
       <input type="text" matInput placeholder="Username" formControlName="name">
     </mat-form-field>
-  </p>
 
-  <p>
     <mat-form-field>
       <input type="password" matInput placeholder="Password" formControlName="password">
     </mat-form-field>
-  </p>
 
-  <!-- <p *ngIf="error" class="error">
-    {{ error }}
-  </p> -->
+    
+    <p *ngIf="errorTrigger" class="error">
+      There is an error on your login data. {{error}}
+    </p>
 
-  <div class="button">
-    <button type="submit" mat-button [disabled]="!profileForm.valid">Login</button>
-  </div>
+    <div class="button">
+      <button mat-flat-button
+        type="submit" 
+        [disabled]="!profileForm.valid"
+      >
+        Login <mat-icon aria-hidden="false" aria-label="Login" fontIcon="login"></mat-icon>
+      </button>
+    </div> 
+  </form>
+</div>
 
-</form>
-</mat-card-content>
-</mat-card>
+<div class="footer">
+  <mat-icon aria-hidden="false" aria-label="Register" fontIcon="home"></mat-icon>
+  <mat-icon aria-hidden="false" aria-label="Recover password" fontIcon="account_circle"></mat-icon>
+  <mat-icon aria-hidden="false" aria-label="Fav" fontIcon="key"></mat-icon>
+  <mat-icon aria-hidden="false" aria-label="Email" fontIcon="login"></mat-icon>
+</div>
