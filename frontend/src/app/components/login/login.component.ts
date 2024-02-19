@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { MatCardModule} from '@angular/material/card'; // Add missing import
 import { MatInputModule } from '@angular/material/input'; // Add missing import
