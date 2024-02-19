@@ -11,7 +11,6 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   selector: 'app-login',
   standalone: true,
   imports: [
-    NgIf,
     MatCardModule, 
     MatInputModule, 
     MatButtonModule, 
@@ -32,6 +31,7 @@ export class LoginComponent {
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
+    console.log('hola')
     console.warn(this.profileForm.value);
 
     localStorage.setItem('loggedIn', 'true');

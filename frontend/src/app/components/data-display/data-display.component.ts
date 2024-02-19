@@ -17,7 +17,6 @@ export class DataDisplayComponent implements OnInit, AfterViewInit {
   chart!: Chart;
 
   ngAfterViewInit(): void {
-    console.log('testtt')
     this.chart = new Chart(this.chartCanvas.nativeElement, {
       type: 'line',
       data: {

@@ -36,11 +36,22 @@
   border-radius: 20px;
 }
 
-.button{
+.buttonBox{
   display: flex;
   justify-content: right;
   color: white;
 }
+
+.buttonBox button{
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+
 
 .footer{
   display: flex;

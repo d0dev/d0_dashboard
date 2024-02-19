@@ -5,10 +5,9 @@
 <h1 class="main main-header">Welcome to Los Santos</h1>
 
 <div class="main"
-  [formGroup]="profileForm" 
 >
   <form class="main-form"
-    
+    [formGroup]="profileForm" 
     (ngSubmit)="onSubmit()"
   >
     <mat-form-field>
@@ -19,12 +18,13 @@
       <input type="password" matInput placeholder="Password" formControlName="password">
     </mat-form-field>
 
-    
-    <p *ngIf="errorTrigger" class="error">
-      There is an error on your login data. {{error}}
-    </p>
+    @if (errorTrigger){
+      <p class="error">
+        There is an error on your login data. {{error}}
+      </p>
+    }
 
-    <div class="button">
+    <div class="buttonBox">
       <button mat-flat-button
         type="submit" 
         [disabled]="!profileForm.valid"
