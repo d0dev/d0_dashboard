@@ -1,6 +1,8 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit, inject, ViewChild, AfterViewInit } from '@angular/core';
 import { Chart, LineController, CategoryScale, LinearScale, PointElement, LineElement, Tooltip } from 'chart.js';
+import { ConnectedUsersService } from '../../services/connected-users.service';
+import { PlayerData } from '../../interfaces/player-data';
 
 Chart.register(LineController, CategoryScale, LinearScale, PointElement, LineElement, Tooltip);
 
@@ -47,14 +49,22 @@ export class DataDisplayComponent implements OnInit, AfterViewInit {
     }, 4000);
   }
 
-  httpClient = inject(HttpClient)
+  constructor(private ConnectedUsersService:ConnectedUsersService, private httpClient: HttpClient) { } // inject UserService
+
+
   data: any[] = [];
+  playersData: PlayerData[] = [];
 
   ngOnInit(): void {
     this.fetchData();
   }
 
   fetchData() {
+    this.ConnectedUsersService.getUsers().subscribe((data: any) => {
+      console.log(data);
+      this.playersData = data.players;
+    });
+
     this.httpClient
     .get('http://localhost:3000/api').subscribe((data: any) => {
       console.log(data);

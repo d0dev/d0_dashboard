@@ -1,2 +1,17 @@
-<h1>Chart.js in Angular</h1>
-<canvas #chartCanvas></canvas>
+<div style="height: max-content;">
+
+    @for (user of playersData; track user.id) {
+    <div style="border:1px solid red">
+        <h2>{{ user.name }}</h2>
+        <p>Health: {{ user.health }}</p>
+        <p>Armor: {{ user.armor }}</p>
+    </div>
+    }
+
+    <div >
+        <h1>Chart.js in Angular</h1>
+        <canvas style="height: 500px;" #chartCanvas></canvas>
+    </div>
+</div>
+
+
