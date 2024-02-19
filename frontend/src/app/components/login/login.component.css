@@ -3,6 +3,8 @@
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  background-image: url("../../../assets/bg.jpg");
+  background-color: #2b2a33;
 }
 
 .header{
